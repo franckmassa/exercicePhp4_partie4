@@ -2,28 +2,29 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8" />
-  <title>Exercice4</title>
+  <title>exercice4</title>
 </head>
 <body>
   <p>
-    <?php
-    /*Déclaration de la fonction avec comme paramètres les deux nombres et retour des messages
-    selon les conditions*/ 
-    function number($a, $b){
-    //Conditions pour retourner les messages
-      if($a > $b){
-        return 'Le premier nombre est plus grand.';
-      } elseif ($a < $b) {
-        return 'Le premier nombre est plus petit.';
-      } else {
-        return 'Les deux nombres sont égaux.';
+  <?php
+  // création de la fonction compareNumber
+  function compareNumber($numberOne, $numberTwo) {
+    // début de la condition
+    // On ne doit pas avoir plusieurs return
+    if($numberOne == $numberTwo) {
+        $message = 'Les deux nombres sont identiques ';
+    } elseif ($numberOne > $numberTwo) {
+        $message = 'Le premier nombre est plus grand ';
+    } elseif ($numberOne < $numberTwo) {
+        $message = 'Le premier nombre est plus petit ';
+    } else {
+        $message = 'Le nombre ne peut être qu\'identique, plus grand ou plus petit';
       }
+      return $message;
     }
-    //Comparaison des deux nombres et affichage des messages
-    echo 'Comparaison entre 10 et 5: ' .number(10, 5).'<br/>
-    Comparaison entre 5 et 10: ' .number(5, 10).'<br/>
-    Comparaison entre 10 et 10: ' .number(10, 10).'<br/>';
-    ?>
-  </p>
+    // affichage de la fonction
+      echo compareNumber(1,2) . ', ' . compareNumber(2,1) . ', ' . compareNumber(15,15);
+  ?>
+ </p>
 </body>
 </html>
